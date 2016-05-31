@@ -15,6 +15,12 @@ module.exports = function(grunt) {
       },
       android: {
         PLATFORM: 'ANDROID'
+      },
+      bs_pc1: {
+        PLATFORM: 'BROWSERSTACK_PC1'
+      },
+      bs_m1: {
+        PLATFORM: 'BROWSERSTACK_M1'
       }
     },
 
@@ -39,9 +45,10 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-exec');
   grunt.loadNpmTasks('grunt-env');
   
-grunt.registerTask('default', ['jshint', 'exec']);
+  grunt.registerTask('default', ['jshint', 'exec']);
   grunt.registerTask('chrome', ['env:chrome', 'jshint', 'exec']);
   grunt.registerTask('firefox', ['env:firefox', 'jshint', 'exec']);
   grunt.registerTask('android', ['env:android', 'jshint', 'exec']);
-
+  grunt.registerTask('bs_pc1', ['env:bs_pc1', 'jshint', 'exec']);
+  grunt.registerTask('bs_m1', ['env:bs_m1', 'jshint', 'exec']);
 };

@@ -3,17 +3,16 @@
 var fs = require('fs');
 var webdriver = require('selenium-webdriver');
 
-
 var platform = process.env.PLATFORM || "CHROME";
 
 var buildAndroidDriver = function() {
-	return new webdriver.Builder() //.usingServer('http://localhost:4723/wd/hub')
-			.withCapabilities({
-				platformName : 'Android',
-				platformVersion : '4.4',
-				deviceName : 'Android Emulator',
-				browserName : 'Chrome'
-			}).build();
+	return new webdriver.Builder() // .usingServer('http://localhost:4723/wd/hub')
+	.withCapabilities({
+		platformName : 'Android',
+		platformVersion : '4.4',
+		deviceName : 'Android Emulator',
+		browserName : 'Chrome'
+	}).build();
 };
 
 var buildChromeDriver = function() {
@@ -26,18 +25,27 @@ var buildFirefoxDriver = function() {
 			webdriver.Capabilities.firefox()).build();
 };
 
-var buildBrowserStackDriver = function() {
-
+var buildBsDriver_PC1 = function() {
 	var capabilities = {
-//		'browserName' : 'IE',
-//		'browser_version' : '8.0',
-//		'os' : 'Windows',
-//		'os_version' : '7',
-//		'resolution' : '1024x768',
-			
-			'browserName' : 'iPhone',
-			 'platform' : 'MAC',
-			 'device' : 'iPhone 6S Plus',
+		'browserName' : 'IE',
+		'browser_version' : '8.0',
+		'os' : 'Windows',
+		'os_version' : '7',
+		'resolution' : '1024x768',
+		'browserstack.user' : process.env.USERNAME,
+		'browserstack.key' : process.env.AUTOMATE_KEY,
+		'browserstack.debug' : 'true'
+	};
+	return new webdriver.Builder().usingServer(
+			'http://hub.browserstack.com/wd/hub')
+			.withCapabilities(capabilities).build();
+};
+
+var buildBsDriver_M1 = function() {
+	var capabilities = {
+		'browserName' : 'iPhone',
+		'platform' : 'MAC',
+		'device' : 'iPhone 6S Plus',
 		'browserstack.user' : process.env.USERNAME,
 		'browserstack.key' : process.env.AUTOMATE_KEY,
 		'browserstack.debug' : 'true'
@@ -57,8 +65,14 @@ case 'FIREFOX':
 case 'CHROME':
 	var driver = buildChromeDriver();
 	break;
+case 'BROWSERSTACK_PC1':
+	var driver = buildBsDriver_PC1();
+	break;
+case 'BROWSERSTACK_M1':
+	var driver = buildBsDriver_M1();
+	break;
 default:
-	var driver = buildBrowserStackDriver();
+	var driver = buildFirefoxDriver();;
 }
 
 var getDriver = function() {
