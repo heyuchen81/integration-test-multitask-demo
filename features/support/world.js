@@ -72,7 +72,7 @@ case 'BROWSERSTACK_M1':
 	var driver = buildBsDriver_M1();
 	break;
 default:
-	var driver = buildFirefoxDriver();;
+	var driver = buildFirefoxDriver();
 }
 
 var getDriver = function() {
