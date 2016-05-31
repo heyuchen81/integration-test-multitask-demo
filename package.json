@@ -1,0 +1,42 @@
+{
+  "name": "integration-test-multitask",
+  "version": "1.0.0",
+  "description": "This is a technical experiment conducted by Xin He on behalf of Ingenta, using Git/Github, Jenkins, Maven, NodeJs, Grunt, CucumberJs, WebdriverJs, and BrowserStack.",
+  "main": "index.js",
+  "scripts": {
+    "test": "grunt"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/heyuchen81/integration-test-multitask-demo.git"
+  },
+  "keywords": [
+    "Integration",
+    "Test",
+    "Git/Github",
+    "Jenkins",
+    "Maven",
+    "NodeJs",
+    "Grunt",
+    "CucumberJs",
+    "WebdriverJs",
+    "BrowserStack"
+  ],
+  "author": "Xin He <xin.he@ingenta.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/heyuchen81/integration-test-multitask-demo/issues"
+  },
+  "homepage": "https://github.com/heyuchen81/integration-test-multitask-demo#readme",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "cucumber": "^1.0.0",
+    "grunt": "^1.0.1",
+    "grunt-cli": "^1.2.0",
+    "grunt-contrib-jshint": "^1.0.0",
+    "grunt-env": "^0.4.4",
+    "grunt-exec": "^0.4.7",
+    "sanitize-filename": "^1.6.0",
+    "selenium-webdriver": "^2.53.2"
+  }
+}
