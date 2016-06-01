@@ -5,16 +5,6 @@ var webdriver = require('selenium-webdriver');
 
 var platform = process.env.PLATFORM || "CHROME";
 
-var buildAndroidDriver = function() {
-	return new webdriver.Builder() // .usingServer('http://localhost:4723/wd/hub')
-	.withCapabilities({
-		platformName : 'Android',
-		platformVersion : '4.4',
-		deviceName : 'Android Emulator',
-		browserName : 'Chrome'
-	}).build();
-};
-
 var buildChromeDriver = function() {
 	return new webdriver.Builder().withCapabilities(
 			webdriver.Capabilities.chrome()).build();
@@ -28,10 +18,10 @@ var buildFirefoxDriver = function() {
 var buildBsDriver_PC1 = function() {
 	var capabilities = {
 		'browserName' : 'IE',
-		'browser_version' : '8.0',
+		'browser_version' : '11.0',
 		'os' : 'Windows',
-		'os_version' : '7',
-		'resolution' : '1024x768',
+		'os_version' : '10',
+		'resolution' : '1920x1200'
 		'browserstack.user' : process.env.USERNAME,
 		'browserstack.key' : process.env.AUTOMATE_KEY,
 		'browserstack.debug' : 'true'
@@ -45,7 +35,7 @@ var buildBsDriver_M1 = function() {
 	var capabilities = {
 		'browserName' : 'iPhone',
 		'platform' : 'MAC',
-		'device' : 'iPhone 6S Plus',
+		'device' : 'iPhone 6S Plus'
 		'browserstack.user' : process.env.USERNAME,
 		'browserstack.key' : process.env.AUTOMATE_KEY,
 		'browserstack.debug' : 'true'
@@ -56,9 +46,6 @@ var buildBsDriver_M1 = function() {
 };
 
 switch (platform) {
-case 'ANDROID':
-	var driver = buildAndroidDriver();
-	break;
 case 'FIREFOX':
 	var driver = buildFirefoxDriver();
 	break;
@@ -72,7 +59,7 @@ case 'BROWSERSTACK_M1':
 	var driver = buildBsDriver_M1();
 	break;
 default:
-	var driver = buildFirefoxDriver();
+	var driver = buildChromeDriver();
 }
 
 var getDriver = function() {
