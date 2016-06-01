@@ -9,8 +9,8 @@ module.exports = function(grunt) {
 		tag_chrome : '@C',
 		tag_firefox : '@F',
 		tag_android : '@F,@C',
-		tag_bs_pc1 : '@F',
-		tag_bs_m1 : '@F',
+		tag_bs_pc1 : '@F,@C',
+		tag_bs_m1 : '@C,@F',
 	
 		env : {
 			chrome : {
