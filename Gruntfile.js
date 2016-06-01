@@ -6,11 +6,10 @@ module.exports = function(grunt) {
 
 	grunt.initConfig({
 
-		tag_chrome : '@C',
-		tag_firefox : '@F',
-		tag_android : '@F,@C',
-		tag_bs_pc1 : '@F,@C',
-		tag_bs_m1 : '@C,@F',
+		tag_chrome : '@Common,@Chrome',
+		tag_firefox : '@Common,@Firefox',
+		tag_bs_pc1 : '@Common,@bs_pc1',
+		tag_bs_m1 : '@Common,@bs_m1',
 	
 		env : {
 			chrome : {
@@ -18,9 +17,6 @@ module.exports = function(grunt) {
 			},
 			firefox : {
 				PLATFORM : 'FIREFOX'
-			},
-			android : {
-				PLATFORM : 'ANDROID'
 			},
 			bs_pc1 : {
 				PLATFORM : 'BROWSERSTACK_PC1'
@@ -46,9 +42,6 @@ module.exports = function(grunt) {
 			run_firefox : {
 				command : 'node ' + path.join('node_modules', 'cucumber', 'bin', 'cucumber.js -f pretty --tags <%= tag_firefox %>')
 			},
-			run_android : {
-				command : 'node ' + path.join('node_modules', 'cucumber', 'bin', 'cucumber.js -f pretty --tags <%= tag_android %>')
-			},
 			run_bs_pc1 : {
 				command : 'node ' + path.join('node_modules', 'cucumber', 'bin', 'cucumber.js -f pretty --tags <%= tag_bs_pc1 %>')
 			},
@@ -69,7 +62,6 @@ module.exports = function(grunt) {
 	grunt.registerTask('default', [ 'jshint', 'exec:run_help' ]);
 	grunt.registerTask('chrome', [ 'env:chrome', 'jshint', 'exec:run_chrome' ]);
 	grunt.registerTask('firefox', [ 'env:firefox', 'jshint', 'exec:run_firefox' ]);
-	grunt.registerTask('android', [ 'env:android', 'jshint', 'exec:run_android' ]);
 	grunt.registerTask('bs_pc1', [ 'env:bs_pc1', 'jshint', 'exec:run_bs_pc1' ]);
 	grunt.registerTask('bs_m1', [ 'env:bs_m1', 'jshint', 'exec:run_bs_m1' ]);
 	

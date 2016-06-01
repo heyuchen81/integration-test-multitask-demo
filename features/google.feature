@@ -4,12 +4,17 @@ Feature: Searching for cucumbers
   In order to find out more about cucumbers
   I want to be able to search for information about cucumbers
   
-  @C
+  @Chrome @Firefox @bs_pc1
   Scenario: Google cucumber search
-    When PC1 I search Google for "Wallingford Oxfordshire"
-    Then PC1 I should see some results
+    When I search Google for "Boston US"
+    Then I should see some results for "bs_pc1"
     
-  @F
+  @bs_m1
   Scenario: Google cucumber search
-    When M1 I search Google for "Somewhere Oxfordshire"
-    Then M1 I should see some results
+    When I search Google for "Boston US"
+    Then I should see some results for "bs_m1"
+    
+  @Common
+  Scenario: Google cucumber search
+    When I search Google for "Oxford UK"
+    Then I should see some results
