@@ -21,7 +21,7 @@ var buildBsDriver_PC1 = function() {
 		'browser_version' : '11.0',
 		'os' : 'Windows',
 		'os_version' : '10',
-		'resolution' : '1920x1200'
+		'resolution' : '1920x1200',
 		'browserstack.user' : process.env.USERNAME,
 		'browserstack.key' : process.env.AUTOMATE_KEY,
 		'browserstack.debug' : 'true'
@@ -35,7 +35,7 @@ var buildBsDriver_M1 = function() {
 	var capabilities = {
 		'browserName' : 'iPhone',
 		'platform' : 'MAC',
-		'device' : 'iPhone 6S Plus'
+		'device' : 'iPhone 6S Plus',
 		'browserstack.user' : process.env.USERNAME,
 		'browserstack.key' : process.env.AUTOMATE_KEY,
 		'browserstack.debug' : 'true'
