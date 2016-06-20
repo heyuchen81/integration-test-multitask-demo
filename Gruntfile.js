@@ -49,7 +49,7 @@ module.exports = function(grunt) {
 				command : 'node ' + path.join('node_modules', 'cucumber', 'bin', 'cucumber.js -f pretty --tags <%= tag_bs_m1 %>')
 			},
 			run_help : {
-				command : 'node ' + path.join('node_modules', 'cucumber', 'bin', '--help')
+				command : 'node ' + path.join('node_modules', 'cucumber', 'bin', 'cucumber.js --help')
 			},
 		}
 	

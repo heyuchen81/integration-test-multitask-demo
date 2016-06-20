@@ -24,7 +24,7 @@ module.exports = function() {
 	    case 'bs_pc1':
 	    case 'chrome':
 	    case 'firefox':
-	    	srquan = 13;
+	    	srquan = 11;
 	        break;
 	    case 'bs_m1':
 	    	srquan = 9;
