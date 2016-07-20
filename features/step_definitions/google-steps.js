@@ -29,7 +29,7 @@ module.exports = function() {
 	    	srquan = 11;
 	    	break;
 	    case 'bs_m1':
-	    	srquan = 10;
+	    	srquan = 15;
 	        break;
 	    default:
 	    	srquan = 0;
