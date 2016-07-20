@@ -3,9 +3,14 @@
 var fs = require('fs');
 var webdriver = require('selenium-webdriver');
 
-var platform = process.env.PLATFORM || "CHROME";
+var platform = process.env.PLATFORM; // || "CHROME";
 
 var buildChromeDriver = function() {
+	return new webdriver.Builder().withCapabilities(
+			webdriver.Capabilities.chrome()).build();
+};
+
+var buildChromeMDriver = function() {
 	return new webdriver.Builder().withCapabilities(
 			webdriver.Capabilities.chrome()).build();
 };
@@ -51,7 +56,8 @@ case 'FIREFOX':
 	break;
 case 'CHROME':
 	var driver = buildChromeDriver();
-	break;
+	driver.manage().window().setSize(1366, 768);
+	break;	
 case 'BROWSERSTACK_PC1':
 	var driver = buildBsDriver_PC1();
 	break;

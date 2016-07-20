@@ -6,10 +6,10 @@ module.exports = function(grunt) {
 
 	grunt.initConfig({
 
-		tag_chrome : '@Common,@Chrome',
-		tag_firefox : '@Common,@Firefox',
-		tag_bs_pc1 : '@Common,@bs_pc1',
-		tag_bs_m1 : '@Common,@bs_m1',
+		tag_chrome : '--tags @common,@chrome',
+		tag_firefox : '--tags @common,@firefox',
+		tag_bs_pc1 : '--tags @common,@bs_pc1',
+		tag_bs_m1 : '--tags @common,@bs_m1',
 	
 		env : {
 			chrome : {
@@ -37,16 +37,16 @@ module.exports = function(grunt) {
 	
 		exec : {
 			run_chrome : {
-				command : 'node ' + path.join('node_modules', 'cucumber', 'bin', 'cucumber.js -f pretty --tags <%= tag_chrome %>')
+				command : 'node ' + path.join('node_modules', 'cucumber', 'bin', 'cucumber.js -f pretty <%= tag_chrome %>')
 			},
 			run_firefox : {
-				command : 'node ' + path.join('node_modules', 'cucumber', 'bin', 'cucumber.js -f pretty --tags <%= tag_firefox %>')
+				command : 'node ' + path.join('node_modules', 'cucumber', 'bin', 'cucumber.js -f pretty <%= tag_firefox %>')
 			},
 			run_bs_pc1 : {
-				command : 'node ' + path.join('node_modules', 'cucumber', 'bin', 'cucumber.js -f pretty --tags <%= tag_bs_pc1 %>')
+				command : 'node ' + path.join('node_modules', 'cucumber', 'bin', 'cucumber.js -f pretty <%= tag_bs_pc1 %>')
 			},
 			run_bs_m1 : {
-				command : 'node ' + path.join('node_modules', 'cucumber', 'bin', 'cucumber.js -f pretty --tags <%= tag_bs_m1 %>')
+				command : 'node ' + path.join('node_modules', 'cucumber', 'bin', 'cucumber.js -f pretty <%= tag_bs_m1 %>')
 			},
 			run_help : {
 				command : 'node ' + path.join('node_modules', 'cucumber', 'bin', 'cucumber.js --help')

@@ -21,11 +21,13 @@ module.exports = function() {
 	this.Then(/^I should see some results for "([^"]*)"$/, function(gruntruntask, next) {
 		var srquan = -1000;
 		switch(gruntruntask) {
-	    case 'bs_pc1':
 	    case 'chrome':
 	    case 'firefox':
-	    	srquan = 11;
+	    	srquan = 13;
 	        break;
+	    case 'bs_pc1':
+	    	srquan = 11;
+	    	break;
 	    case 'bs_m1':
 	    	srquan = 10;
 	        break;
