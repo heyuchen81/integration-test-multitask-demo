@@ -50,7 +50,7 @@
 							<goal>grunt</goal>
 						</goals>
 						<configuration>
-							<arguments>bs_pc1 bs_m1</arguments>
+							<arguments>bs_m1</arguments>
 						</configuration>
 					</execution>
 				</executions>
