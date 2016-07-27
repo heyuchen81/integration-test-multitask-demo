@@ -75,7 +75,7 @@ var getDriver = function() {
 
 var World = function World() {
 
-	var defaultTimeout = 20000;
+	var defaultTimeout = 50000;
 	var screenshotPath = "screenshots";
 
 	this.webdriver = webdriver;
