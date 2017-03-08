@@ -23,12 +23,12 @@ module.exports = function() {
 		switch(gruntruntask) {
 	    case 'chrome':
 	    case 'firefox':
-	    case 'bs_pc1':
-	    	srquan = 13;
-	        break;
 //	    case 'bs_pc1':
-//	    	srquan = 11;
-//	    	break;
+//	    	srquan = 13;
+//	        break;
+	    case 'bs_pc1':
+	    	srquan = 11;
+	    	break;
 	    case 'bs_m1':
 	    	srquan = 10;
 	        break;
