@@ -29,8 +29,11 @@ module.exports = function() {
 	    case 'bs_pc1':
 	    	srquan = 11;
 	    	break;
+//	    case 'bs_m1':
+//	    	srquan = 10;
+//	        break;
 	    case 'bs_m1':
-	    	srquan = 10;
+	    	srquan = 11;
 	        break;
 	    default:
 	    	srquan = 0;
